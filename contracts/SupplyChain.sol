@@ -29,16 +29,16 @@ contract SupplyChain {
    */
 
   // <LogForSale event: sku arg>
-  event LogForSale(uint sku);
+  event LogForSale(uint _sku);
 
   // <LogSold event: sku arg>
-  event LogSold(uint sku);
+  event LogSold(uint _sku);
 
   // <LogShipped event: sku arg>
-  event LogShipped(uint sku);
+  event LogShipped(uint _sku);
 
   // <LogReceived event: sku arg>
-  event LogReceived(uint sku);
+  event LogReceived(uint _sku);
 
 
   /* 
@@ -58,7 +58,7 @@ contract SupplyChain {
   }
 
   modifier paidEnough(uint _price) { 
-    require(msg.value >= _price); 
+    assert(msg.value >= _price); 
     _;
   }
 
